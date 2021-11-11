@@ -22,7 +22,7 @@ public class AccountExceptionsTest {
 	   
     @Test //validateInvalidAmount
     public void validateA(){
-    	try {
+		try {
 			accountService.withdraw(-2345);
 		} catch (AccountException e) {
 			assertTrue(e.getMessage().equals("Please enter valid amount"));
