@@ -12,30 +12,30 @@ public class AutomaticTellerMachine {
 	private static AccountService accountService = new AccountServiceImpl(); 
 	
 	
-    public static void main( String[] args ){
-    	
-    	Scanner scanner = new Scanner(System.in);  
-    	int option = 9999;
-    	int counter = 0; 
-    	int customerId=0;
-    	int customerPIN=0;
-    	System.out.println("Welcome to ABC Bank");
-    	boolean validCustomer = false;
-    	boolean validPIN = false;
-    	NumberFormat formatter =  NumberFormat.getCurrencyInstance();
-    	
-    	   	
-    	System.out.println("Please enter your customer id to get started");
-    	
-    	while(true) {
-    		customerId=0;
-    		
-    		if(scanner.hasNextInt()) {
-    			customerId = scanner.nextInt();
-    		}
-    		else {
-    			scanner.next();
-    		}
+	public static void main( String[] args ){
+		
+		Scanner scanner = new Scanner(System.in);  
+		int option = 9999;
+		int counter = 0; 
+		int customerId=0;
+		int customerPIN=0;
+		System.out.println("Welcome to ABC Bank");
+		boolean validCustomer = false;
+		boolean validPIN = false;
+		NumberFormat formatter =  NumberFormat.getCurrencyInstance();
+		
+		   	
+		System.out.println("Please enter your customer id to get started");
+		
+		while(true) {
+			customerId=0;
+			
+			if(scanner.hasNextInt()) {
+				customerId = scanner.nextInt();
+			}
+			else {
+				scanner.next();
+			}
 	    	
 	    	if(!accountService.validateAccount(customerId)) {
 	    		System.out.println("Please enter valid customer id");	
@@ -45,26 +45,26 @@ public class AutomaticTellerMachine {
 	    		accountService.loadAccountDetails(customerId);
 	    		break;
 	    	}
-    	}	
-    	
-    	
-    	
-    	System.out.println("Please enter your PIN");
-    	
-    	while(true) {
-    		customerPIN=0;
-    		
+		}	
+		
+		
+		
+		System.out.println("Please enter your PIN");
+		
+		while(true) {
+			customerPIN=0;
+			
 	    	if(counter >= 3) {
 	    		System.out.println("You have exceeded maximum attempts to enter a valid PIN. Please contact helpdesk @ (111) 111 1111");
 	    		break;
 	    	}
 	    	
-    		if(scanner.hasNextInt()) {
-    			customerPIN = scanner.nextInt();
-    		}
-    		else {
-    			scanner.next();
-    		}
+			if(scanner.hasNextInt()) {
+				customerPIN = scanner.nextInt();
+			}
+			else {
+				scanner.next();
+			}
 	    	
 	    	if(!accountService.validatePIN(customerId, customerPIN)) {
 	    		System.out.println("Please enter valid PIN");	
@@ -74,9 +74,9 @@ public class AutomaticTellerMachine {
 	    		validPIN = true;
 	    		break;
 	    	}
-    	}
-    	
-    	if(validCustomer && validPIN) {
+		}
+		
+		if(validCustomer && validPIN) {
 	    	
 	    	System.out.println("Select one of the following options");
 	    	
@@ -158,10 +158,10 @@ public class AutomaticTellerMachine {
 		    		
 		    	}
 	    	} while(option != 4);
-    	}
-    	
-    	scanner.close();
-    }
+		}
+		
+		scanner.close();
+	}
     
     
 }
