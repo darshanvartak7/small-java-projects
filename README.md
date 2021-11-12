@@ -4,7 +4,7 @@
 
 # **Prerequisites:**
 
-Install and configure following libraries
+Install and configure following libraries/tools
 
 _Java 8_
 
@@ -16,13 +16,13 @@ _Basic understanding of running java, maven and git commands is required_
 
 # **Setting the environment**
 
-_set JAVA_HOME environment variable by setting the appropriate java installation path_
+_set JAVA_HOME environment variable by setting it to appropriate java installation path_
 
 For example on linux/mac the command to set JAVA_HOME might look like this
 
 `export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home`
 
-_make sure PATH variable is pointing to appropriate java, maven, git executables_
+_Similarly make sure PATH variable is pointing to appropriate java, maven, git executables_
 
 # **Getting the source code**
 
@@ -48,7 +48,7 @@ From the **banking** directory in the source code run following command
 
 From the **banking** directory in the source code run following commands
 
-set **CLASSPATH** variable as give below
+set **CLASSPATH** environment variable as give below
 
 CLASSPATH=./target/classes
 
@@ -56,6 +56,6 @@ For example in linux/mac run following command
 
 `export CLASSPATH=./target/classes`
 
-run following command to execute the application
+run the following command to execute the application
 
 `java -classpath $CLASSPATH com.abcbank.banking.ui.AutomaticTellerMachine`
